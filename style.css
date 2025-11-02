@@ -7,14 +7,17 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
+  /* Dark background: near black */
+  background-color: #000000; 
+  /* Light text: off-white */
+  color: #ffffff; 
   overflow-x: hidden;
 }
 
 /* Header */
 .main-header {
-  background: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent black for the header */
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -39,30 +42,35 @@ body {
   font-size: 1.8rem;
   letter-spacing: 2px;
   text-decoration: none;
-  color: #d4af37; /* Gold accent */
+  /* Was gold, now pure white */
+  color: #ffffff; 
 }
 
 .nav-item {
   text-decoration: none;
-  color: #fff;
+  /* White text */
+  color: #ffffff;
   margin: 0 15px;
   font-weight: 400;
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
-  color: #d4af37;
+  /* Hover becomes a light gray */
+  color: #aaaaaa;
 }
 
 .nav-icon {
-  color: #fff;
+  /* White icon */
+  color: #ffffff;
   margin-left: 20px;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
 .nav-icon:hover {
-  color: #d4af37;
+  /* Hover becomes a light gray */
+  color: #aaaaaa;
 }
 
 /* Hero Section */
@@ -78,7 +86,8 @@ body {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  filter: brightness(50%);
+  /* KEEP brightness(50%) for contrast, but REMOVE grayscale(100%) */
+  filter: brightness(50%); 
 }
 
 .hero-text-overlay {
@@ -94,35 +103,46 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
   margin-bottom: 20px;
-  color: #d4af37;
+  /* Was gold, now pure white */
+  color: #ffffff;
 }
 
 .pre-title {
   letter-spacing: 3px;
   font-size: 0.9rem;
-  color: #f0e6d2;
+  /* Was light beige, now light gray */
+  color: #cccccc;
 }
 
 .subtitle {
   font-size: 1.1rem;
   margin-bottom: 30px;
-  color: #ddd;
+  /* Was light gray, now a darker gray */
+  color: #999999;
 }
 
 .cta-button {
-  background: linear-gradient(90deg, #d4af37, #f7d774);
-  color: #000;
+  /* Was a gold gradient, now solid white background */
+  background: #ffffff;
+  /* Text is pure black */
+  color: #000000;
   padding: 14px 30px;
   text-decoration: none;
   border-radius: 30px;
   font-weight: 700;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  /* New: border for emphasis */
+  border: 2px solid #ffffff; 
 }
 
 .cta-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  /* Hover shadow is now a light gray/white */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); 
+  /* Invert colors on hover for a dramatic effect */
+  background: #000000;
+  color: #ffffff;
 }
 
 /* WhatsApp Button */
@@ -130,26 +150,38 @@ body {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background-color: #25D366;
+  /* Was bright green, now black */
+  background-color: #000000;
+  /* New: white border to stand out */
+  border: 2px solid #ffffff; 
   border-radius: 50%;
   width: 60px;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
   z-index: 200;
 }
 
+/* Note: You will need a new black/white WhatsApp icon image */
 .whatsapp-btn img {
   width: 34px;
   height: 34px;
+  filter: invert(100%); /* Makes the icon white */
 }
 
 .whatsapp-btn:hover {
   transform: scale(1.1);
+  /* Invert colors on hover */
+  background-color: #ffffff;
 }
+
+.whatsapp-btn:hover img {
+  filter: invert(0%); /* Makes the icon black */
+}
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -177,11 +209,16 @@ body {
     margin: 10px 0;
   }
 }
+
+/* --- */
+
 /* Collection Page */
 .collection-page {
   padding-top: 120px;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
+  /* Near black background */
+  background-color: #000000;
+  /* White text */
+  color: #ffffff;
   min-height: 100vh;
 }
 
@@ -192,12 +229,14 @@ body {
 
 .page-header h1 {
   font-family: 'Playfair Display', serif;
-  color: #d4af37;
+  /* Was gold, now pure white */
+  color: #ffffff;
   font-size: 3rem;
 }
 
 .page-header p {
-  color: #ccc;
+  /* Was light gray, now a standard gray */
+  color: #999999;
   font-size: 1rem;
   letter-spacing: 1px;
 }
@@ -213,51 +252,64 @@ body {
 }
 
 .product-card {
-  background: #111;
+  /* Slightly lighter black for the card background */
+  background: #111111;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+  /* Was gold shadow, now a subtle white shadow */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  /* More prominent white shadow on hover */
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .product-card img {
   width: 100%;
   height: 320px;
   object-fit: cover;
+  /* REMOVED: filter: grayscale(100%); */
 }
 
 .product-card h3 {
   font-family: 'Playfair Display', serif;
-  color: #d4af37;
+  /* Was gold, now pure white */
+  color: #ffffff;
   font-size: 1.4rem;
   margin: 15px 0 5px;
 }
 
 .price {
-  color: #f5f5f5;
+  /* White price text */
+  color: #ffffff;
   font-weight: 400;
   margin-bottom: 15px;
 }
 
 .add-to-cart {
-  background: linear-gradient(90deg, #d4af37, #f7d774);
+  /* Was a gold gradient, now solid white background */
+  background: #ffffff;
   border: none;
-  color: #000;
+  /* Text is pure black */
+  color: #000000;
   font-weight: 700;
   padding: 12px 24px;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 20px;
+  border: 2px solid #ffffff;
 }
 
 .add-to-cart:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  /* Invert colors on hover */
+  background: #000000;
+  color: #ffffff;
+  /* Was gold shadow, now white shadow */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
